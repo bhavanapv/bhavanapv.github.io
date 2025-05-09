@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhavana P. - Nutrition & Wellness Consultant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --accent-color: #88C0A7;
+      --background-color: #fefefe;
+      --text-color: #333;
+      --heading-font: 'Playfair Display', serif;
+      --body-font: 'Open Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--body-font);
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+    }
+
+    nav .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    nav .logo {
+      font-family: var(--heading-font);
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 600;
+      transition: color 0.3s;
+      font-size: 1rem;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+
+    header {
+      padding: 7rem 1rem 3rem;
+      text-align: center;
+      background: linear-gradient(145deg, #e3f9e5, #f4fff6);
+    }
+
+    header h1 {
+      font-family: var(--heading-font);
+      font-size: 3rem;
+      margin: 0;
+      color: var(--primary-color);
+    }
+
+    header p {
+      margin-top: 0.8rem;
+      font-size: 1.25rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+      padding-top: 2rem;
+    }
+
+    h2 {
+      font-family: var(--heading-font);
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .card ul, .card p {
+      line-height: 1.7;
+    }
+
+    .card ul li::before {
+      content: "🌿 ";
+    }
+
+    .services table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .services th, .services td {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .services th {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    .testimonial {
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .testimonial p {
+      font-style: italic;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 1rem 1rem 0 0;
+      text-decoration: none;
+      color: white;
+      background-color: var(--primary-color);
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .contact a:hover {
+      background-color: #3e8e41;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      nav .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-top: 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Bhavana P.</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#qualifications">Qualifications</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Bhavana P.</h1>
+    <p>👩‍⚕️ Clinical Nutritionist | 👶 Pediatric Diet Consultant | 🌱 Holistic Wellness Coach</p>
+  </header>
+
+  <main class="container">
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>🌟 About Me</h2>
+      <div class="card">
+        <p>Hi, I'm <strong>Bhavana P.</strong>, a qualified Clinical Nutritionist and Holistic Diet Consultant with a background in engineering.</p>
+        <p>I specialize in <strong>clinical dietetics</strong> 🧪, <strong>pediatric nutrition</strong> 🍼, and <strong>holistic wellness</strong> 🧘‍♀️ — combining science with mindful living to support individuals and families on their journey to better health.</p>
+      </div>
+    </section>
+
+    <!-- QUALIFICATIONS -->
+    <section id="qualifications">
+      <h2>🎓 Qualifications & Certifications</h2>
+      <div class="card">
+        <ul>
+          <li>Post Graduate Diploma in Clinical Nutrition & Holistic Diet – APCE</li>
+          <li>Certified Pediatric Nutrition Consultant 👶</li>
+          <li>Specialized in Therapeutic Diets, Gut Health, Women’s Wellness 🩺</li>
+          <li>Former Engineer – Applying analytical precision to nutrition 🧠</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section id="approach">
+      <h2>💡 My Approach</h2>
+      <div class="card">
+        <p><em>“Food is not just fuel — it's information for your body and soul.”</em></p>
+        <ul>
+          <li>✅ Evidence-Based</li>
+          <li>👨‍👩‍👧 Family-Centric</li>
+          <li>🌍 Culturally Sensitive</li>
+          <li>📊 Outcome-Oriented</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+      <h2>📦 Services Offered</h2>
+      <div class="card">
+        <table>
+          <tr>
+            <th>Service</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>1-on-1 Consultations</td>
+            <td>Tailored plans for clinical, pediatric, or lifestyle goals</td>
+          </tr>
+          <tr>
+            <td>Family Nutrition Programs</td>
+            <td>Holistic guidance for parents, teens & children</td>
+          </tr>
+          <tr>
+            <td>Workshops & Webinars</td>
+            <td>Corporate wellness and school-based nutrition education</td>
+          </tr>
+          <tr>
+            <td>Holistic Diet Coaching</td>
+            <td>Gut health, hormone balance, sleep & stress focus</td>
+          </tr>
+          <tr>
+            <td>Specialized Needs Support</td>
+            <td>Plans for allergies, PCOS, diabetes, and more</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <h2>📣 What Clients Say</h2>
+      <div class="card">
+        <div class="testimonial">
+          <p>“Bhavana’s plans are practical, rooted in science, and changed the way our family eats for the better.”</p>
+          <span>– Shruti A., Parent</span>
+        </div>
+        <div class="testimonial">
+          <p>“Her engineering background shows in how precisely she understands and tracks results. Truly holistic.”</p>
+          <span>– Ravi M., Client with diabetes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>📞 Let's Connect</h2>
+      <div class="card contact">
+        <p>I offer both online and in-person consultations. Book a free discovery call and take the first step toward better health!</p>
+        <a href="#">📅 Book a Free Call</a>
+        <a href="#">📱 Instagram: @nutriwithbhavana</a>
+        <a href="#">📄 Download Sample Meal Plan</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Bhavana P. | Designed for Wellness and Simplicity 🌿
+  </footer>
+
+</body>
+</html>
