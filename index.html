@@ -25,13 +25,12 @@
       font-family: var(--body-font);
       background-color: var(--background-color);
       color: var(--text-color);
+      line-height: 1.6;
     }
 
     nav {
-      position: fixed;
-      width: 100%;
+      position: sticky;
       top: 0;
-      left: 0;
       background-color: white;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       z-index: 1000;
@@ -64,8 +63,8 @@
       text-decoration: none;
       color: var(--text-color);
       font-weight: 600;
-      transition: color 0.3s;
-      font-size: 1rem;
+      transition: all 0.3s;
+      position: relative;
     }
 
     nav ul li a:hover {
@@ -139,8 +138,18 @@
       color: white;
     }
 
+    .testimonial-slider {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .testimonial-track {
+      display: flex;
+      animation: scrollTestimonials 15s infinite;
+    }
+
     .testimonial {
-      margin-bottom: 1.5rem;
+      min-width: 100%;
       padding-left: 1rem;
       border-left: 4px solid var(--accent-color);
     }
@@ -153,6 +162,14 @@
       display: block;
       margin-top: 0.5rem;
       font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    @keyframes scrollTestimonials {
+      0% { transform: translateX(0%); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
     }
 
     .contact a {
@@ -170,11 +187,37 @@
       background-color: #3e8e41;
     }
 
+    .counter-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      background: #f8fdf8;
+      padding: 3rem 1rem;
+      border-radius: 10px;
+    }
+
+    .counter-box {
+      text-align: center;
+    }
+
+    .counter-box .count {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .counter-box p {
+      margin: 0.5rem 0 0;
+      font-weight: 600;
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
       color: #777;
+      background-color: #fafafa;
     }
 
     @media (max-width: 768px) {
@@ -191,6 +234,16 @@
 
       header h1 {
         font-size: 2rem;
+      }
+
+      .testimonial-track {
+        flex-direction: column;
+        animation: none;
+      }
+
+      .testimonial {
+        min-width: unset;
+        margin-bottom: 1rem;
       }
     }
   </style>
@@ -256,6 +309,26 @@
       </div>
     </section>
 
+    <!-- COUNTERS -->
+    <section class="counter-section">
+      <div class="counter-box">
+        <div class="count" data-target="7">0</div>
+        <p>Years of Experience</p>
+      </div>
+      <div class="counter-box">
+        <div class="count" data-target="120">0</div>
+        <p>Families Helped</p>
+      </div>
+      <div class="counter-box">
+        <div class="count" data-target="40">0</div>
+        <p>Workshops Conducted</p>
+      </div>
+      <div class="counter-box">
+        <div class="count" data-target="300">0</div>
+        <p>Personalized Diets</p>
+      </div>
+    </section>
+
     <!-- SERVICES -->
     <section id="services" class="services">
       <h2>📦 Services Offered</h2>
@@ -292,14 +365,20 @@
     <!-- TESTIMONIALS -->
     <section id="testimonials">
       <h2>📣 What Clients Say</h2>
-      <div class="card">
-        <div class="testimonial">
-          <p>“Bhavana’s plans are practical, rooted in science, and changed the way our family eats for the better.”</p>
-          <span>– Shruti A., Parent</span>
-        </div>
-        <div class="testimonial">
-          <p>“Her engineering background shows in how precisely she understands and tracks results. Truly holistic.”</p>
-          <span>– Ravi M., Client with diabetes</span>
+      <div class="card testimonial-slider">
+        <div class="testimonial-track">
+          <div class="testimonial">
+            <p>“Bhavana’s plans are practical, rooted in science, and changed the way our family eats for the better.”</p>
+            <span>– Shruti A., Parent</span>
+          </div>
+          <div class="testimonial">
+            <p>“Her engineering background shows in how precisely she understands and tracks results. Truly holistic.”</p>
+            <span>– Ravi M., Client with diabetes</span>
+          </div>
+          <div class="testimonial">
+            <p>“Her advice is always gentle, mindful, and tailored to our lifestyle. We feel more energized and healthy!”</p>
+            <span>– Neha K., Working Mom</span>
+          </div>
         </div>
       </div>
     </section>
@@ -321,5 +400,26 @@
     &copy; 2025 Bhavana P. | Designed for Wellness and Simplicity 🌿
   </footer>
 
+  <script>
+    // Counter animation
+    const counters = document.querySelectorAll('.count');
+    const speed = 200; // lower = faster
+
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  </script>
 </body>
 </html>
